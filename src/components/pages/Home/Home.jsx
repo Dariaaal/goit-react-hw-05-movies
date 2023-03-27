@@ -18,7 +18,7 @@ const Home = () => {
         }
 
         GetItems();
-    })
+    },[])
 
     console.log(items)
 
