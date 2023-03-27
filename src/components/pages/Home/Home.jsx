@@ -10,7 +10,7 @@ const Home = () => {
         async function GetItems(){
             try{
                 const data = await getTrendingMovies();
-            setItems([...data.results]);
+                setItems([...data.results]);
             }
             catch(error){
                 console.log(error)
@@ -18,7 +18,7 @@ const Home = () => {
         }
 
         GetItems();
-    }, [])
+    })
 
     console.log(items)
 
