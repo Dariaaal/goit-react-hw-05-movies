@@ -7,3 +7,12 @@
     display: flex;
     gap: 40px;
 }
+
+.link{
+    color: black;
+    font-size: 24px;
+}
+
+.link:hover{
+    font-weight: 600;
+}
