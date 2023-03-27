@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {Link, useParams } from 'react-router-dom';
+import { Link, useParams, Outlet } from 'react-router-dom';
 import getMovieDetails from "components/api/MovieDetails";
 import css from './MovieDetails.module.css'
 
@@ -22,7 +22,8 @@ const MovieDetails = () => {
 })
 
   const {poster_path, genres, vote_average, title, overview} = details;
-  return <div className={css.wrap}>
+  return <div>
+    <div className={css.wrap}>
     <div>
     <img src={poster_path && `https://image.tmdb.org/t/p/original/${poster_path}`} alt={title} className={css.poster}/>
     </div>
@@ -37,14 +38,17 @@ const MovieDetails = () => {
                 <li key={genre.id}>{genre.name}</li>
         ))}
     </ul>
+    </div>
+    </div>
+    <div className={css.additional}>
     <h3>Additional information</h3>
     <ul>
         <li><Link to={'cast'} className={css.link}>Cast</Link></li>
         <li><Link to={'reviews'} className={css.link}>Reviews</Link></li>
     </ul>
+    <Outlet/>
     </div>
   </div>
 }
-
 
 export default MovieDetails;
