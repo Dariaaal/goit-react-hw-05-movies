@@ -8,8 +8,13 @@ const Home = () => {
     
     useEffect(()=>{
         async function GetItems(){
-            const data = await getTrendingMovies();
+            try{
+                const data = await getTrendingMovies();
             setItems([...data.results]);
+            }
+            catch(error){
+                console.log(error)
+            }
         }
 
         GetItems();

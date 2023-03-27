@@ -1,0 +1,12 @@
+.link{
+    color: black;
+    font-size: 20px;
+}
+
+.link:hover{
+    font-weight: 600;
+}
+
+.title{
+    margin-left: 50px;
+}

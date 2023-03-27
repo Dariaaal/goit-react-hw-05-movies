@@ -3,6 +3,6 @@
     font-size: 20px;
 }
 
-.title{
-    margin-left: 50px;
+.link:hover{
+    font-weight: 600;
 }

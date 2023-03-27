@@ -1,42 +1,5 @@
 import { useState } from "react";
-import css from './pages/Movies.module.css'
-
-// const Searchbar = ({handleSearch}) => {
-
-// const [value, setValue] = useState('');
-
-// const handleChange = e => {
-//   setValue(e.target.value.toLowerCase());
-// }
-
-// const handleSubmit = e => {
-//   e.preventDefault();
-//   handleSearch(value);
-//   reset();
-// }
-  
-// const reset = () => {
-//   setValue('');
-// }
-
-// return <form onSubmit={handleSubmit}>
-//     <input
-//       type="text"
-//       autoComplete="off"
-//       autoFocus
-//       className={css.search}
-//       value={value}
-//       onChange={handleChange}
-//     />
-
-// <button type="submit">
-//      Search
-//     </button>
-
-//   </form>
-// }
-
-// export default Searchbar;
+import css from './Searchbar.module.css'
 
 const Searchbar = ({handleSearch}) => {
     const [value, setValue] = useState('');

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import getSearchQueryMovies from "components/api/SearchQueryMovies";
-import Searchbar from "components/Searchbar";
+import Searchbar from "components/Searchbar/Searchbar";
+import css from './Movies.module.css'
 
 const Movies = () => {
 
@@ -22,10 +23,15 @@ const Movies = () => {
       setSearchParams({ query: moviesQuery });
 
         async function GetQuery(){
+           try{
             const data = await getSearchQueryMovies(moviesQuery);
             console.log(data.results)
             setMovies([...data.results]);
             localStorage.setItem('moviesQuery', moviesQuery);
+           }
+           catch(error){
+            console.log(error)
+           }
         }
 
         GetQuery();
@@ -41,7 +47,7 @@ const Movies = () => {
     {movies && movies.map(movie => {
       return (
         <li key={movie.id}>
-          <Link to={`${movie.id}`}>{movie.title || movie.name}</Link>
+          <Link to={`${movie.id}`} className={css.link}>{movie.title || movie.name}</Link>
         </li>
       )
     })}
