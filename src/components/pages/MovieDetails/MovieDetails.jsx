@@ -25,7 +25,7 @@ const MovieDetails = () => {
 
   const {poster_path, genres, vote_average, title, overview} = details;
   return <div>
-    <Link to={backLinkLocationRef.current}>Go back</Link>
+    <Link to={backLinkLocationRef.current} className={css.back}>Go back</Link>
     <div className={css.wrap}>
     <div>
     <img src={poster_path && `https://image.tmdb.org/t/p/original/${poster_path}`} alt={title} className={css.poster}/>
