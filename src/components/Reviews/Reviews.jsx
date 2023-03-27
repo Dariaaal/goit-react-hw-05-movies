@@ -1,6 +1,7 @@
-import getReviews from "./api/ReviewsApi";
+import getReviews from "../api/ReviewsApi";
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
+import css from './Reviews.module.css'
 
 const Reviews = () => {
   const [reviews, setReviews] = useState('');
@@ -21,11 +22,11 @@ const Reviews = () => {
     GetReviewsInfo();
 })
 
-return <ul>
+return <ul className={css.list}>
   {reviews && reviews.map(review => {
     return (
       <li key={review.id}>
-        <p>Author: {review.author}</p>
+        <p className={css.author}>Author: {review.author}</p>
         <p>{review.content}</p>
       </li>
     );
