@@ -49,8 +49,8 @@ const MovieDetails = () => {
         <li><Link to={'cast'} className={css.link}>Cast</Link></li>
         <li><Link to={'reviews'} className={css.link}>Reviews</Link></li>
     </ul>
-    <Outlet/>
     </div>
+    <Outlet/>
   </div>
 }
 
