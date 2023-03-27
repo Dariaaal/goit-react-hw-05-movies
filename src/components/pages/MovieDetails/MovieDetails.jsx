@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link, useParams, Outlet } from 'react-router-dom';
+import { useEffect, useState, useRef } from "react";
+import { Link, useParams, Outlet, useLocation } from 'react-router-dom';
 import getMovieDetails from "components/api/MovieDetails";
 import css from './MovieDetails.module.css'
 
 const MovieDetails = () => {
   const [details, setDetails] = useState('');
+  const location = useLocation();
+  const backLinkLocationRef = useRef(location.state ? location.state.from : '/movies')
   const { movieId } = useParams();
 
   useEffect(()=>{
@@ -23,6 +25,7 @@ const MovieDetails = () => {
 
   const {poster_path, genres, vote_average, title, overview} = details;
   return <div>
+    <Link to={backLinkLocationRef.current}>Go back</Link>
     <div className={css.wrap}>
     <div>
     <img src={poster_path && `https://image.tmdb.org/t/p/original/${poster_path}`} alt={title} className={css.poster}/>

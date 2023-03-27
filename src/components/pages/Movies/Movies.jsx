@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useLocation } from "react-router-dom";
 import getSearchQueryMovies from "components/api/SearchQueryMovies";
 import Searchbar from "components/Searchbar/Searchbar";
 import css from './Movies.module.css'
 
 const Movies = () => {
 
+    const location = useLocation();
     const [movies, setMovies] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const [moviesQuery, setMoviesQuery] = useState(() => {
@@ -47,7 +48,7 @@ const Movies = () => {
     {movies && movies.map(movie => {
       return (
         <li key={movie.id}>
-          <Link to={`${movie.id}`} className={css.link}>{movie.title || movie.name}</Link>
+          <Link to={`${movie.id}`}  state={{from: location}} className={css.link}>{movie.title || movie.name}</Link>
         </li>
       )
     })}
