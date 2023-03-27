@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {Link, useParams} from 'react-router-dom';
 import getMovieDetails from "components/api/MovieDetails";
+import css from './MovieDetails.module.css'
 
 const MovieDetails = () => {
   const [details, setDetails] = useState('');
@@ -21,8 +22,11 @@ const MovieDetails = () => {
 })
 
   const {poster_path, genres, vote_average, title, overview} = details;
-  return <div>
-    <img src={poster_path && `https://image.tmdb.org/t/p/original/${poster_path}`} alt={title} />
+  return <div className={css.wrap}>
+    <div>
+    <img src={poster_path && `https://image.tmdb.org/t/p/original/${poster_path}`} alt={title} className={css.poster}/>
+    </div>
+    <div>
     <h1>{title}</h1>
     <p>{`User Score: ${vote_average}`}</p>
     <h2>Overview</h2>
@@ -38,6 +42,7 @@ const MovieDetails = () => {
         <li><Link to={'cast'}>Cast</Link></li>
         <li><Link to={'reviews'}>Reviews</Link></li>
     </ul>
+    </div>
   </div>
 }
 

@@ -1,0 +1,9 @@
+.poster{
+    display: block;
+    width: 500px;
+}
+
+.wrap{
+    display: flex;
+    gap: 40px;
+}
