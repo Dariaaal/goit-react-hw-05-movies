@@ -26,7 +26,6 @@ const Movies = () => {
         async function GetQuery(){
            try{
             const data = await getSearchQueryMovies(moviesQuery);
-            console.log(data.results)
             setMovies([...data.results]);
             localStorage.setItem('moviesQuery', moviesQuery);
            }

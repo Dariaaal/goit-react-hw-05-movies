@@ -1,0 +1,8 @@
+.photo{
+    display: block;
+    width: 200px;
+}
+
+.name{
+    font-weight: 600;
+}

@@ -10,6 +10,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
 
   useEffect(()=>{
+
     async function GetDetails(){
         try{
             const data = await getMovieDetails(movieId);

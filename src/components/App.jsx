@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import {Route, Routes} from 'react-router-dom';
 import Navigation from './Navigation/Navigation';
-import Cast from './Cast';
+import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
 import Layout from './Layout';
 

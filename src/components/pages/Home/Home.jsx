@@ -21,8 +21,6 @@ const Home = () => {
         GetItems();
     },[])
 
-    console.log(items)
-
     return(
         <main>
             <h1 className={css.title}>Trending now</h1>

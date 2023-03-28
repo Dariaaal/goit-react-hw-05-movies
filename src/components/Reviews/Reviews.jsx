@@ -31,6 +31,7 @@ return <ul className={css.list}>
       </li>
     );
   })}
+  {reviews.length === 0 && <p>We don't have any reviews for this movie.</p>}
 </ul>
 }
 
