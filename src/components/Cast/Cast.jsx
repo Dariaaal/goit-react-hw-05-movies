@@ -19,7 +19,7 @@ const Cast = () => {
     }
 
     GetCastInfo();
-})
+}, [movieId])
 
 return <ul>
     {cast && cast.map(person => {

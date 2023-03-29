@@ -20,7 +20,7 @@ const Reviews = () => {
     }
 
     GetReviewsInfo();
-})
+}, [movieId])
 
 return <ul className={css.list}>
   {reviews && reviews.map(review => {

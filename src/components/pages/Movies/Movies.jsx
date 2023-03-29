@@ -9,9 +9,7 @@ const Movies = () => {
     const location = useLocation();
     const [movies, setMovies] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
-    const [moviesQuery, setMoviesQuery] = useState(() => {
-          return window.localStorage.getItem('moviesQuery') ?? '';
-        });
+    const [moviesQuery, setMoviesQuery] = useState('');
 
     searchParams.get('movieId');
 
@@ -27,7 +25,6 @@ const Movies = () => {
            try{
             const data = await getSearchQueryMovies(moviesQuery);
             setMovies([...data.results]);
-            localStorage.setItem('moviesQuery', moviesQuery);
            }
            catch(error){
             console.log(error)

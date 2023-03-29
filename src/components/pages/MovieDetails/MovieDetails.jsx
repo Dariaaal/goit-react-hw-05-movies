@@ -22,7 +22,7 @@ const MovieDetails = () => {
     }
 
     GetDetails();
-})
+}, [movieId])
 
   const {poster_path, genres, vote_average, title, overview} = details;
   return <div>

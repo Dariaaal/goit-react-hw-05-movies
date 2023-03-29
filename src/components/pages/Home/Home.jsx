@@ -19,7 +19,7 @@ const Home = () => {
         }
 
         GetItems();
-    },[])
+    },[items])
 
     return(
         <main>
