@@ -9,21 +9,18 @@ const Movies = () => {
     const location = useLocation();
     const [movies, setMovies] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
-    const [moviesQuery, setMoviesQuery] = useState('');
 
-    searchParams.get('movieId');
+    const searchQuery = searchParams.get('query');
 
     useEffect(()=>{
 
-      if (moviesQuery === '') {
+      if (!searchQuery) {
         return;
       }
 
-      setSearchParams({ query: moviesQuery });
-
         async function GetQuery(){
            try{
-            const data = await getSearchQueryMovies(moviesQuery);
+            const data = await getSearchQueryMovies(searchQuery);
             setMovies([...data.results]);
            }
            catch(error){
@@ -32,10 +29,10 @@ const Movies = () => {
         }
 
         GetQuery();
-    }, [moviesQuery, setSearchParams])
+    }, [searchQuery, setSearchParams])
 
     const onSearchSubmit = value => {
-      setMoviesQuery(value);
+      setSearchParams({ query: value });
     }
 
     return <div>
